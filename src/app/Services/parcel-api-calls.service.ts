@@ -18,29 +18,29 @@ export class ParcelApiCallsService {
   constructor(private http: HttpClient) {}
 
   getParcels(): Observable<Parcel[]> {
-    return this.http.get<Parcel[]>(this.apiUrl);
+    return this.http.get<Parcel[]>(this.apiUrl, httpOptions);
   }
 
   getFilteredParcels(value: string): Observable<Parcel[]> {
     let url = `${this.apiUrl}/?ParcelMachineId=${value}`;
-    return this.http.get<Parcel[]>(url);
+    return this.http.get<Parcel[]>(url, httpOptions);
   }
 
   getParcelById(id: string): Observable<Parcel> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Parcel>(url);
+    return this.http.get<Parcel>(url, httpOptions);
   }
 
   addParcel(newParcel: Parcel): Observable<any> {
-    return this.http.post<any>(this.apiUrl, newParcel);
+    return this.http.post<any>(this.apiUrl, newParcel, httpOptions);
   }
 
   updateParcel(parcel: Parcel): Observable<any> {
-    return this.http.put<any>(this.apiUrl, parcel);
+    return this.http.put<any>(this.apiUrl, parcel, httpOptions);
   }
 
   deleteParcel(id: string): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<any>(url);
+    return this.http.delete<any>(url, httpOptions);
   }
 }

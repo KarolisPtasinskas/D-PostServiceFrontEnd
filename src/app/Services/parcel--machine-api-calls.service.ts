@@ -18,12 +18,12 @@ export class ParcelMachineApiCallsService {
   constructor(private http: HttpClient) {}
 
   getParcelMachines(): Observable<ParcelMachine[]> {
-    return this.http.get<ParcelMachine[]>(this.apiUrl);
+    return this.http.get<ParcelMachine[]>(this.apiUrl, httpOptions);
   }
 
   getParcelMachineById(id: string): Observable<ParcelMachine> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.get<ParcelMachine>(url);
+    return this.http.get<ParcelMachine>(url, httpOptions);
   }
 
   addParcelMachine(newParcelMachine: ParcelMachine): Observable<any> {
@@ -31,11 +31,11 @@ export class ParcelMachineApiCallsService {
   }
 
   updateParcelMachine(parcelMachine: ParcelMachine): Observable<any> {
-    return this.http.put<any>(this.apiUrl, parcelMachine);
+    return this.http.put<any>(this.apiUrl, parcelMachine, httpOptions);
   }
 
   deleteParcelMachine(id: string): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<any>(url);
+    return this.http.delete<any>(url, httpOptions);
   }
 }

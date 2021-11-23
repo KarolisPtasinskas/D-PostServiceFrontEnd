@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class ParcelApiCallsService {
-  private apiUrl = 'https://localhost:44354/api/Parcels';
+  private apiUrl = 'https://post-service-app.herokuapp.com/api/parcels';
 
   constructor(private http: HttpClient) {}
 

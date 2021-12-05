@@ -14,10 +14,11 @@ import { ParcelMachineListComponent } from './Components/parcel-machine-list/par
 import { AddEditParcelComponent } from './Components/add-edit-parcel/add-edit-parcel.component';
 import { AddEditParcelMachineComponent } from './Components/add-edit-parcel-machine/add-edit-parcel-machine.component';
 import { LoginComponent } from './Components/login/login.component';
+import { SigninGoogleComponent } from './Components/signin-google/signin-google.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'signin-google', component: SigninGoogleComponent },
   { path: 'parcel-list', component: ParcelListComponent },
   { path: 'parcel-machine-list', component: ParcelMachineListComponent },
   { path: 'add-edit-parcel', component: AddEditParcelComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     AddEditParcelComponent,
     AddEditParcelMachineComponent,
     LoginComponent,
+    SigninGoogleComponent,
   ],
   imports: [
     BrowserModule,
